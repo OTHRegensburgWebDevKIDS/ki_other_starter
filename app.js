@@ -7,6 +7,9 @@ dotenv.config();
 
 const app = express();
 
+//turn on serving static files (required for delivering images to client)
+app.use(express.static("public"));
+
 app.engine('.hbs', handlebars.engine({extname: '.hbs'}));
 app.set('view engine', '.hbs');
 app.set('views', './views');
